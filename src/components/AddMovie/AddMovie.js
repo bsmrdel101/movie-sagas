@@ -13,8 +13,9 @@ function AddMovie() {
             <form>
                 <input placeholder="Name" />
                 <input placeholder="Image url" type="url" />
-                <input placeholder="Description" />
-                <label htmlFor="genres">Choose a genre:</label>
+                <label htmlFor="descriptionInput">Enter a description</label>
+                <textarea name="descriptionInput"></textarea>
+                <label htmlFor="genres">Choose a genre</label>
                 <select name="genres">
                     <option></option>
                     <option value="Adventure">Adventure</option>
