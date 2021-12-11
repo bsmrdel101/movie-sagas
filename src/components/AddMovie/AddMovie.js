@@ -7,9 +7,6 @@ function AddMovie() {
 
     return (
         <>
-            <div>
-                <button onClick={() => {history.goBack()}}>Back to list</button>
-            </div>
             <form>
                 <input placeholder="Name" />
                 <input placeholder="Image url" type="url" />
@@ -32,6 +29,10 @@ function AddMovie() {
                     <option value="Space-Opera">Space-Opera</option>
                     <option value="Superhero">Superhero</option>
                 </select>
+                <div>
+                    <button onClick={() => {history.goBack()}}>Cancel</button>
+                    <button type="submit">Save</button>
+                </div>
             </form>
         </>
     );
