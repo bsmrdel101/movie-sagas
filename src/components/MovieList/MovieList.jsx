@@ -14,7 +14,7 @@ function MovieList() {
     }, []);
 
     const seeDetails = (movie) => {
-        history.push('/details');
+        history.push(`/details?id=${movie.id}`);
     }
 
     return (
