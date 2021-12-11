@@ -1,14 +1,9 @@
 import { useHistory } from "react-router";
-import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
 function MovieDetails() {
     const history = useHistory();
     const dispatch = useDispatch();
-
-    useEffect(() => {
-        
-    }, []);
 
     return (
             <div>
