@@ -34,8 +34,18 @@ function AddMovie() {
         // Save values for all inputs into a reducer
         // Clear input forms
         // Return back to movie list
-    const handleSubmit = () => {
 
+    // TODO: submit genre response
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        dispatch({
+            type: 'SET_FORM',
+            payload: {title: name, poster: Image, description: description}
+        })
+        setName('');
+        setUrl('');
+        setDescription('');
+        history.goBack();
     }
 
     return (
@@ -43,7 +53,7 @@ function AddMovie() {
             <form onSubmit={handleSubmit}>
                 <input placeholder="Name" value={name}
                     onChange={(event) => {handleNameChange(event.target.value)}}/>
-                <input placeholder="Image url" type="url" value={url}
+                <input placeholder="Image url" value={url}
                     onChange={(event) => {handleUrlChange(event.target.value)}} />
                 <textarea name="descriptionInput" rows="6" cols="25" value={description} placeholder="Enter a description"
                     onChange={(event) => {handleDescriptionChange(event.target.value)}} ></textarea>
