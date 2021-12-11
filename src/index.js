@@ -32,7 +32,7 @@ function* fetchAllMovies() {
 // Get the specified movie
 function* fetchThisMovie(action) {
     try {
-        const movies = yield axios.get(`/api/movie/${action.payload}`);
+        const movies = yield axios.get(`/api/movieId/${action.payload}`);
         console.log('get all:', action.payload);
         yield put({ type: 'SET_MOVIES', payload: movies.data });
     } catch {
