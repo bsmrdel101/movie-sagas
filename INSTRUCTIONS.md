@@ -11,7 +11,7 @@ Be sure to do both parts!
 
 ## Add Features to our Movie App
 
-For this weekend challenge you'll be expanding on a movie management application! We're already able to see movies that exist in our DB. We'll need to be able to see detailed view for each individual movie, including genres associated with that movie. We also need to able to add a new movie's information.
+For this weekend challenge you'll be expanding on a movie management application! We're already able to see movies that exist in our DB. We'll need to be able to see detailed view for each individual movie, including genres associated with that movie. We also need to be able to add a new movie's information.
 
 ## Database Setup
 
