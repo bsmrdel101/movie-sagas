@@ -1,9 +1,9 @@
 const express = require('express');
+const { Router } = require('react-router');
 const router = express.Router();
 const pool = require('../modules/pool')
 
 router.get('/', (req, res) => {
-
   const query = `SELECT * FROM movies ORDER BY "title" ASC`;
   pool.query(query)
     .then( result => {
@@ -13,7 +13,11 @@ router.get('/', (req, res) => {
       console.log('ERROR: Get all movies', err);
       res.sendStatus(500)
     })
+});
 
+router.get('/:id', (req, res) => {
+    console.log(req.params);
+    res.sendStatus(200);
 });
 
 router.post('/', (req, res) => {

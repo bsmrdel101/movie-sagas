@@ -4,7 +4,6 @@ import { useHistory } from 'react-router';
 import './MovieList.css'
 
 function MovieList() {
-
     const dispatch = useDispatch();
     const history = useHistory();
     const movies = useSelector(store => store.movies);
@@ -14,7 +13,11 @@ function MovieList() {
     }, []);
 
     const seeDetails = (movie) => {
-        history.push(`/details?id=${movie.id}`);
+        history.push('/details');
+        dispatch({
+            type: 'FETCH_THIS_MOVIE',
+            payload: movie.id
+        })
     }
 
     return (
