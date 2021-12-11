@@ -5,13 +5,30 @@ function AddMovie() {
     const history = useHistory();
     const dispatch = useDispatch();
 
+    // Functions to handle input values being changed
+        // Changes input value to whatever the user is typing
+    const handleNameChange = () => {
+
+    }
+    
+    const handleUrlChange = () => {
+
+    }
+
+    const handleDescriptionChange = () => {
+
+    }
+
     return (
         <>
             <form>
-                <input placeholder="Name" />
-                <input placeholder="Image url" type="url" />
+                <input placeholder="Name" 
+                    onChange={(event) => {handleNameChange(event.target.value)}}/>
+                <input placeholder="Image url" type="url" 
+                    onChange={(event) => {handleUrlChange(event.target.value)}} />
                 <label htmlFor="descriptionInput">Enter a description</label>
-                <textarea name="descriptionInput" rows="6" cols="25"></textarea>
+                <textarea name="descriptionInput" rows="6" cols="25" 
+                    onChange={(event) => {handleDescriptionChange(event.target.value)}} ></textarea>
                 <label htmlFor="genres">Choose a genre</label>
                 <select name="genres">
                     <option></option>
