@@ -40,7 +40,7 @@ function AddMovie() {
         event.preventDefault();
         dispatch({
             type: 'SET_FORM',
-            payload: {title: name, poster: Image, description: description}
+            payload: {title: name, poster: url, description: description}
         })
         setName('');
         setUrl('');
