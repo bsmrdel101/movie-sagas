@@ -11,7 +11,7 @@ function AddMovie() {
                 <input placeholder="Name" />
                 <input placeholder="Image url" type="url" />
                 <label htmlFor="descriptionInput">Enter a description</label>
-                <textarea name="descriptionInput"></textarea>
+                <textarea name="descriptionInput" rows="6" cols="25"></textarea>
                 <label htmlFor="genres">Choose a genre</label>
                 <select name="genres">
                     <option></option>
