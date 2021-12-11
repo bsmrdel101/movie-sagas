@@ -63,11 +63,22 @@ const genres = (state = [], action) => {
     }
 }
 
+// Used to store form data from AddMovie
+const movieForm = (state = [], action) => {
+    switch (action.type) {
+        case 'SET_FORM':
+            return action.payload
+        default:
+            return state;
+    }
+}
+
 // Create one store that all components can use
 const storeInstance = createStore(
     combineReducers({
         movies,
         genres,
+        movieForm,
     }),
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),
