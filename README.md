@@ -10,8 +10,6 @@ _Duration: Weekend Sprint_
 
 This site is a movie gallery page that shows you details about the movies inside of it. Different movies from a database are stored on the site, you can also add your own movies, and find out more details about existing ones.
 
-To see the fully functional site, please visit: [DEPLOYED VERSION OF APP](www.heroku.com)
-
 ## Screen Shot
 
 ![pic_2](./public/images/pic_2.png)
