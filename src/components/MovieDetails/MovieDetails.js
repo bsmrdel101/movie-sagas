@@ -2,6 +2,8 @@ import { useHistory } from "react-router";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { Button } from "@material-ui/core";
+import './MovieDetails.css';
+import { useState } from "react";
 
 function MovieDetails() {
     const history = useHistory();

@@ -1,14 +1,18 @@
 .movies {
     display : flex;
     flex-wrap: wrap;
-    gap: 1rem
-}
-
-.movies img {
-    height: 230px;
+    gap: 1rem;
+    margin: 2rem;
+    background-color: #e7deef;
+    padding: 1em;
 }
 
 .MuiButtonBase-root.MuiButton-root.MuiButton-contained {
     background-color: rgb(198 39 251);
     color: white;
+}
+
+#add-movie .MuiButton-label {
+    padding: 5px 40px;
+    font-size: 35px;
 }

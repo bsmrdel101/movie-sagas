@@ -22,3 +22,17 @@
   to { transform: rotate(360deg); }
 }
 
+header {
+  font-size: 50px;
+  color: white;
+  background-color: purple;
+  border: 3px solid #5801585c;
+  border-radius: 3px;
+  padding: 3px;
+  margin-bottom: 4vh;
+}
+
+header h1 {
+  transform:rotate(3deg);
+}
+
