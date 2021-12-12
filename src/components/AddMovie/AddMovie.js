@@ -2,6 +2,7 @@ import { useHistory } from "react-router";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { Button } from "@material-ui/core";
 
 function AddMovie() {
     // Declare dispatch and history
@@ -33,7 +34,6 @@ function AddMovie() {
 
     const handleGenreChange = (event) => {
         setGenre(event);
-        console.log(event);
     }
 
     // Handles form being submitted
@@ -83,8 +83,8 @@ function AddMovie() {
                     </select>
                 </div>
                 <div>
-                    <button onClick={() => {history.goBack()}}>Cancel</button>
-                    <button type="submit">Save</button>
+                    <Button variant="contained" onClick={() => {history.goBack()}}>Cancel</Button>
+                    <Button variant="contained" type="submit" onClick={() => {history.goBack()}}>Save</Button>
                 </div>
             </form>
         </>

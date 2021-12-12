@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import './MovieList.css'
+import { Button } from '@material-ui/core';
 
 function MovieList() {
     const dispatch = useDispatch();
@@ -23,13 +24,13 @@ function MovieList() {
     return (
         <main>
             <h1>MovieList</h1>
-            <button onClick ={e => history.push('/add')}>Add a Movie</button>
+            <Button variant="contained" onClick ={e => history.push('/add')}>Add a Movie</Button>
             <section className="movies">
                 {movies.map(movie => {
                     return (
-                        <div key={movie.id}>
+                        <div key={movie.id} onClick={e => seeDetails(movie)}>
                             <h3>{movie.title}</h3>
-                            <img onClick={e => seeDetails(movie)} src={movie.poster} alt={movie.title}/>
+                            <img src={movie.poster} alt={movie.title}/>
                         </div>
                     );
                 })}

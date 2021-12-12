@@ -7,3 +7,8 @@
 .movies img {
     height: 230px;
 }
+
+.MuiButtonBase-root.MuiButton-root.MuiButton-contained {
+    background-color: rgb(198 39 251);
+    color: white;
+}

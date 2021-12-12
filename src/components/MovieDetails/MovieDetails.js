@@ -1,5 +1,7 @@
 import { useHistory } from "react-router";
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { Button } from "@material-ui/core";
 
 function MovieDetails() {
     const history = useHistory();
@@ -7,7 +9,7 @@ function MovieDetails() {
 
     return (
             <div>
-                <button onClick={() => {history.goBack()}}>Back to list</button>
+                <Button variant="contained" onClick={() => {history.goBack()}}>Back to list</Button>
             </div>
         );
     }
