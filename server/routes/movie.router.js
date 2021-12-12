@@ -16,9 +16,11 @@ router.get('/', (req, res) => {
 });
 
 // GET route for specific movie
+  // Make a query to get the specific info from the database
+  // Pass in the req.params.id to select a movie
 router.get('/:id', (req, res) => {
   console.log(req.params.id);
-  const query = `SELECT "title", "name" FROM movies JOIN "movies_genres" ON "movies"."id"="movies_genres"."movie_id" 
+  const query = `SELECT "title", "name", "poster", "genres"."id" FROM movies JOIN "movies_genres" ON "movies"."id"="movies_genres"."movie_id" 
   JOIN "genres" ON "movies_genres"."genre_id"="genres"."id" WHERE movie_id=$1`;
   pool.query(query,[req.params.id])
   .then( result => {
