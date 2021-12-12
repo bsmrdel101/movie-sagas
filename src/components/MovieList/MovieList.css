@@ -21,3 +21,8 @@
 .form-buttons .MuiButtonBase-root.MuiButton-root.MuiButton-contained {
     margin: 5px;
 }
+
+body {
+    background: rgb(177,87,204);
+    background: linear-gradient(90deg, rgba(177,87,204,0.4) 33%, rgba(204,100,236,0.2) 59%, rgba(235,168,255,0.2) 87%);
+}

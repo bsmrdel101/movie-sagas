@@ -42,10 +42,6 @@ function MovieList() {
                                 </CardContent>
                             </CardActionArea>
                         </Card>
-                        // <div key={movie.id} onClick={e => seeDetails(movie)}>
-                        //     <h3>{movie.title}</h3>
-                        //     <img src={movie.poster} alt={movie.title}/>
-                        // </div>
                     );
                 })}
             </section>

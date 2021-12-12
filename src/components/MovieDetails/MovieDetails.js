@@ -1,6 +1,6 @@
 import { useHistory } from "react-router";
 import { useSelector } from "react-redux";
-import { Button } from "@material-ui/core";
+import { Button, Card, CardActionArea, CardMedia, Typography, CardContent } from "@material-ui/core";
 import './MovieDetails.css';
 
 function MovieDetails() {
