@@ -33,24 +33,6 @@ function AddMovie() {
         setGenre(event);
     }
 
-    // Array of genres for the dropdown menu
-    const genres = [
-        {value: '0',label: ''},
-        {value: '1',label: 'Adventure'},
-        {value: '2',label: 'Animated'},
-        {value: '3',label: 'Biographical'},
-        {value: '4',label: 'Comedy'},
-        {value: '5',label: 'Disaster'},
-        {value: '6',label: 'Drama'},
-        {value: '7',label: 'Epic'},
-        {value: '8',label: 'Fantasy'},
-        {value: '9',label: 'Musical'},
-        {value: '10',label: 'Romantic'},
-        {value: '11',label: 'Science Fiction'},
-        {value: '12',label: 'Space-Opera'},
-        {value: '13',label: 'Superhero'},
-    ];
-
     // Handles form being submitted
         // Save values for all inputs into a reducer
         // Clear input forms
@@ -73,7 +55,7 @@ function AddMovie() {
                 <form onSubmit={handleSubmit}>
                     <TextField label="Name" variant="standard" value={name}
                     onChange={(event) => {handleNameChange(event.target.value)}} />
-                    <TextField label="Image url" variant="standard" value={url}
+                    <TextField label="Image url (png)" variant="standard" value={url}
                     onChange={(event) => {handleUrlChange(event.target.value)}} />
                     <div>
                         <TextField
@@ -87,7 +69,7 @@ function AddMovie() {
                     </div>
                     <div>
                         <label htmlFor="genres">Choose a genre: </label>
-                        <select name="genres" onChange={handleGenreChange}>
+                        <select name="genres" onChange={(event) => {handleGenreChange(event.target.value)}}>
                             <option></option>
                             <option value="1">Adventure</option>
                             <option value="2">Animated</option>
