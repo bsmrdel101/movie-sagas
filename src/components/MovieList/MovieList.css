@@ -1,4 +1,9 @@
 .movies {
     display : flex;
     flex-wrap: wrap;
+    gap: 1rem
+}
+
+.movies img {
+    height: 230px;
 }
