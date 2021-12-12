@@ -1,22 +1,19 @@
 import { useHistory } from "react-router";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
-import { useSelector } from "react-redux";
-import { Button } from "@material-ui/core";
+import { Button, TextField, MenuItem } from "@material-ui/core";
+import './AddMovie.css'
 
 function AddMovie() {
     // Declare dispatch and history
     const history = useHistory();
     const dispatch = useDispatch();
 
-    // Bring in our movieForm reducer
-    const movieForm = useSelector((store) => store.movieForm);
-
     // Declare local states to store input values
     let [name, setName] = useState('');
     let [url, setUrl] = useState('');
     let [description, setDescription] = useState('');
-    let [genre, setGenre] = useState(1);
+    let [genre, setGenre] = useState(0);
 
     // Functions to handle input values being changed
         // Changes input value to whatever the user is typing
@@ -35,6 +32,24 @@ function AddMovie() {
     const handleGenreChange = (event) => {
         setGenre(event);
     }
+
+    // Array of genres for the dropdown menu
+    const genres = [
+        {value: '0',label: ''},
+        {value: '1',label: 'Adventure'},
+        {value: '2',label: 'Animated'},
+        {value: '3',label: 'Biographical'},
+        {value: '4',label: 'Comedy'},
+        {value: '5',label: 'Disaster'},
+        {value: '6',label: 'Drama'},
+        {value: '7',label: 'Epic'},
+        {value: '8',label: 'Fantasy'},
+        {value: '9',label: 'Musical'},
+        {value: '10',label: 'Romantic'},
+        {value: '11',label: 'Science Fiction'},
+        {value: '12',label: 'Space-Opera'},
+        {value: '13',label: 'Superhero'},
+    ];
 
     // Handles form being submitted
         // Save values for all inputs into a reducer
@@ -56,37 +71,43 @@ function AddMovie() {
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
-                <input placeholder="Name" value={name}
-                    onChange={(event) => {handleNameChange(event.target.value)}}/>
-                <input placeholder="Image url" value={url}
+            <section>
+                <form onSubmit={handleSubmit}>
+                    <TextField label="Name" variant="standard" value={name}
+                    onChange={(event) => {handleNameChange(event.target.value)}} />
+                    <TextField label="Image url" variant="standard" value={url}
                     onChange={(event) => {handleUrlChange(event.target.value)}} />
-                <textarea name="descriptionInput" rows="6" cols="25" value={description} placeholder="Enter a description"
-                    onChange={(event) => {handleDescriptionChange(event.target.value)}} ></textarea>
-                <div>
-                    <label htmlFor="genres">Choose a genre</label>
-                    <select name="genres" onChange={(event) => {handleGenreChange(event.target.value)}}>
-                        <option></option>
-                        <option value="1">Adventure</option>
-                        <option value="2">Animated</option>
-                        <option value="3">Biographical</option>
-                        <option value="4">Comedy</option>
-                        <option value="5">Disaster</option>
-                        <option value="6">Drama</option>
-                        <option value="7">Epic</option>
-                        <option value="8">Fantasy</option>
-                        <option value="9">Musical</option>
-                        <option value="10">Romantic</option>
-                        <option value="11">Science Fiction</option>
-                        <option value="12">Space-Opera</option>
-                        <option value="13">Superhero</option>
-                    </select>
-                </div>
-                <div>
-                    <Button variant="contained" onClick={() => {history.goBack()}}>Cancel</Button>
-                    <Button variant="contained" type="submit" onClick={() => {history.goBack()}}>Save</Button>
-                </div>
-            </form>
+                    <div>
+                        <TextField
+                            label="Description"
+                            multiline
+                            rows={6}
+                            value={description}
+                            onChange={(event) => {handleDescriptionChange(event.target.value)}}
+                            variant="filled" 
+                        />
+                    </div>
+                    <div>
+                        <TextField
+                            id="outlined-select-currency"
+                            select
+                            label="Select"
+                            value={genre}
+                            onChange={handleGenreChange}
+                            helperText="Please select a genre" >
+                            {genres.map((option) => (
+                                <MenuItem key={option.value} value={option.value}>
+                                {option.label}
+                                </MenuItem>
+                            ))}
+                        </TextField>
+                    </div>
+                    <div className="form-buttons">
+                        <Button variant="contained" onClick={() => {history.goBack()}}>Cancel</Button>
+                        <Button variant="contained" type="submit" onClick={() => {history.goBack()}}>Save</Button>
+                    </div>
+                </form>
+            </section>
         </>
     );
 }
