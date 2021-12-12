@@ -15,6 +15,7 @@ function AddMovie() {
     let [name, setName] = useState('');
     let [url, setUrl] = useState('');
     let [description, setDescription] = useState('');
+    let [genre, setGenre] = useState(0);
 
     // Functions to handle input values being changed
         // Changes input value to whatever the user is typing
@@ -39,8 +40,8 @@ function AddMovie() {
     const handleSubmit = (event) => {
         event.preventDefault();
         dispatch({
-            type: 'SET_FORM',
-            payload: {title: name, poster: url, description: description}
+            type: 'NEW_FORM',
+            payload: {title: name, poster: url, description: description, genre_id: 1}
         })
         setName('');
         setUrl('');
