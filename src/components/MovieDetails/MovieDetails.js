@@ -11,7 +11,7 @@ function MovieDetails() {
     console.log(movies);
 
     return (
-            <div>
+            <div className="details-card">
                 <img src={movies[0].poster} />
                 <h2>{movies[0].title}</h2>
                 <p>{movies[0].description}</p>
